@@ -1,0 +1,9 @@
+# Workspace-level cargo configuration for component model WASM
+
+[build]
+# Default to native target for runner
+# Plugin will explicitly use wasm32-wasip2
+
+[target.wasm32-wasip2]
+# Panic abort for component model (standard for WASM)
+rustflags = ["-C", "panic=abort"]
