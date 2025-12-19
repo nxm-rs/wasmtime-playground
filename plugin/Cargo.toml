@@ -1,0 +1,11 @@
+[package]
+name = "plugin"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+crate-type = ["cdylib"]
+
+[dependencies]
+# Using v0.47.0 from git to match bleeding-edge wasmtime with async support
+wit-bindgen = { git = "https://github.com/bytecodealliance/wit-bindgen.git", default-features = false, features = ["realloc", "macros", "async"] }
