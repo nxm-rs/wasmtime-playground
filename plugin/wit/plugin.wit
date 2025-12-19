@@ -1,0 +1,24 @@
+package example:plugin;
+
+/// Host functions that the plugin can import and call
+interface host-functions {
+    /// Log a message to the host console (synchronous)
+    log: func(message: string);
+
+    /// Make an HTTP GET request and return the response body
+    /// Returns empty string on error
+    /// Note: Host implements this async, but WIT signature is sync for WASIp2 compatibility
+    fetch: func(url: string) -> string;
+}
+
+/// The plugin world defines what the plugin imports and exports
+world plugin {
+    /// Import host functions
+    import host-functions;
+
+    /// Export the main entry point
+    export run: func();
+
+    /// Export a simple math function for demonstration
+    export add: func(a: s32, b: s32) -> s32;
+}
