@@ -5,6 +5,10 @@ members = [
     "plugin",
 ]
 
+[workspace.package]
+license = "AGPL-3.0-only"
+repository = "https://github.com/nxm-rs/wasmtime-playground"
+
 [profile.dev]
 panic = "abort"
 
